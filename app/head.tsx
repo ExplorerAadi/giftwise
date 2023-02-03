@@ -11,7 +11,10 @@ export default function Head() {
         property="og:description"
         content="Discover thoughtful and personalized gift recommendations and say goodbye to gift-giving stress with your wise gift pal."
       />
-      <meta property="og:image" content="./purple-giftwise-logo.png" />
+      <meta
+        property="og:image"
+        content="https://vercel.com/b11f719d-9559-42d9-93a6-e9b995d05f58"
+      />
       <meta
         name="description"
         content="Discover thoughtful and personalized gift recommendations and say goodbye to gift-giving stress with your wise gift pal."
