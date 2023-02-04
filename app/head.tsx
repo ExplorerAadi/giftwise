@@ -13,7 +13,7 @@ export default function Head() {
       />
       <meta
         property="og:image"
-        content="https://vercel.com/b11f719d-9559-42d9-93a6-e9b995d05f58"
+        content="https://giftwise-exploreraadi.vercel.app/purple-gift-half.png"
       />
       <meta
         name="description"
