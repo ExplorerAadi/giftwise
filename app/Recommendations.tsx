@@ -10,7 +10,7 @@ import {
 import { IPromptFormContext } from "./PromptFormProvider";
 import { Loader } from "@/assets/Icons";
 import { RadioGroup } from "@headlessui/react";
-import { classNames, URLify } from "@/utils";
+import { classNames, URLify } from "utils";
 import getSymbolFromCurrency from "currency-symbol-map";
 
 interface IPromptData {
@@ -83,7 +83,7 @@ export const Recommendations = () => {
               )}
             >
               <div className="flex items-center space-x-2 w-full justify-center">
-                Try again
+                Once more
               </div>
             </button>
           </div>
@@ -211,7 +211,7 @@ const PromptBudgetForm = ({
           )}
         >
           <div className="flex items-center space-x-2 w-full justify-center">
-            <p>Next</p>
+            <p>Do the magic</p>
             {isSubmitting && <Loader />}
           </div>
         </button>
