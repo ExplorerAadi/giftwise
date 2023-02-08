@@ -46,6 +46,33 @@
   --card-border-rgb: 131, 134, 135;
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent #64748b50;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #64748b50;
+  border-radius: 14px;
+  border: 3px solid #64748b50;
+}
+
+.recommendation a {
+  color: #0084ff !important;
+  text-decoration: underline !important;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
