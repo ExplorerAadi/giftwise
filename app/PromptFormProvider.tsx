@@ -8,6 +8,7 @@ export interface IPromptFormContext {
     preferences: string[];
     recipientRelationShip: string;
     recipientLocation: string;
+    budget: string;
   };
   setFormValues: (values: IPromptFormContext["data"]) => void;
 }
@@ -19,6 +20,7 @@ export const PromptFormProvider = ({ children }: { children: ReactNode }) => {
     preferences: [""],
     recipientRelationShip: "",
     recipientLocation: "",
+    budget: "",
   });
 
   const setFormValues = (values: IPromptFormContext["data"]) => {
