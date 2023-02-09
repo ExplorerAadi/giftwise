@@ -12,6 +12,7 @@ import { Loader } from "@/assets/Icons";
 import { RadioGroup } from "@headlessui/react";
 import { classNames, URLify } from "utils";
 import getSymbolFromCurrency from "currency-symbol-map";
+import { toast } from "react-hot-toast";
 
 interface IPromptData {
   label: string;
@@ -34,11 +35,15 @@ export const Recommendations = () => {
       });
       setFormStep(formStep + 1);
     } else {
-      const res = await fetch(
-        `https://giftwise-backend-production.up.railway.app/search?ocassion=${formData.ocassion}&preferences=${formData.preferences}&recipientRelationShip=${formData.recipientRelationShip}&budget=${data.budget}`
-      );
-      const responseData = await res.json();
-      setRecommendation(URLify(responseData?.choices[0]?.text || ""));
+      try {
+        const res = await fetch(
+          `https://giftwise-backend-production.up.railway.app/search?ocassion=${formData.ocassion}&preferences=${formData.preferences}&recipientRelationShip=${formData.recipientRelationShip}&budget=${data.budget}`
+        );
+        const responseData = await res.json();
+        setRecommendation(URLify(responseData?.choices[0]?.text || ""));
+      } catch (err) {
+        toast.error("Oops! Please try again.");
+      }
     }
   };
 
@@ -241,7 +246,6 @@ const PromptSuggestions = ({
       } else if (preferences.includes(value)) {
         preferencesArr.splice(preferencesArr.indexOf(value), 1);
       }
-      console.log(preferencesArr);
       setValue(name, preferencesArr.join(", "));
       return;
     }

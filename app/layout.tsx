@@ -1,3 +1,6 @@
+"use client";
+
+import { Toaster } from "react-hot-toast";
 import { AnalyticsWrapper } from "./analytics";
 import "./globals.css";
 
@@ -16,6 +19,18 @@ export default function RootLayout({
           </div>
         </main>
         <AnalyticsWrapper />
+        <Toaster
+          position="top-center"
+          toastOptions={{
+            duration: 6000,
+            error: {
+              duration: 4000,
+            },
+            success: {
+              duration: 2000,
+            },
+          }}
+        />
       </body>
     </html>
   );
