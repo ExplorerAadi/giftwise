@@ -37,7 +37,7 @@ export const Recommendations = () => {
     } else {
       try {
         const res = await fetch(
-          `https://giftwise-backend-production.up.railway.app/search?ocassion=${formData.ocassion}&preferences=${formData.preferences}&recipientRelationShip=${formData.recipientRelationShip}&budget=${data.budget}`
+          `https://zippy-marmalade-viscount.glitch.me/search?ocassion=${formData.ocassion}&preferences=${formData.preferences}&recipientRelationShip=${formData.recipientRelationShip}&budget=${data.budget}`
         );
         const responseData = await res.json();
         setRecommendation(URLify(responseData?.choices[0]?.text || ""));
