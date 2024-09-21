@@ -1,8 +1,18 @@
-"use client";
-
-import { Toaster } from "react-hot-toast";
-import { AnalyticsWrapper } from "./analytics";
+import { AnalyticsWrapper, ToasterWrapper } from "./ClientDirectiveWrapper";
 import "./globals.css";
+import { AddToHomeScreen } from "./AddToHomeScreen";
+
+export const metadata = {
+  title: "Giftwise",
+  description: "Personalized gift recommendations",
+  manifest: "/manifest.json",
+  themeColor: "#6d28d9",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+  icons: [
+    { rel: "icon", url: "/favicon.ico" },
+    { rel: "apple-touch-icon", url: "/icon-192x192.png" },
+  ],
+};
 
 export default function RootLayout({
   children,
@@ -18,19 +28,9 @@ export default function RootLayout({
             {children}
           </div>
         </main>
+        <AddToHomeScreen />
         <AnalyticsWrapper />
-        <Toaster
-          position="top-center"
-          toastOptions={{
-            duration: 6000,
-            error: {
-              duration: 4000,
-            },
-            success: {
-              duration: 2000,
-            },
-          }}
-        />
+        <ToasterWrapper />
       </body>
     </html>
   );
