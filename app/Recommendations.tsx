@@ -37,7 +37,7 @@ export const Recommendations = () => {
     } else {
       try {
         const res = await fetch(
-          `https://melodic-succulent-cod.glitch.me/search?ocassion=${formData.ocassion}&preferences=${formData.preferences}&recipientRelationShip=${formData.recipientRelationShip}&budget=${data.budget}`
+          `http://localhost:3000/search?ocassion=${formData.ocassion}&preferences=${formData.preferences}&recipientRelationShip=${formData.recipientRelationShip}&budget=${data.budget}`
         );
         const responseData = await res.json();
         setRecommendation(URLify(responseData?.choices[0]?.text || ""));
